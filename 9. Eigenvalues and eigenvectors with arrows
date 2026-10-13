@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+C = np.array([[3, 1],
+              [1, 3]])
+
+e, v = np.linalg.eig(C)
+print("Eigenvalues:", e)
+print("Eigenvectors:\n", v)
+
+for i in range(2):
+    plt.quiver(0, 0, v[0, i], v[1, i],
+               angles="xy", scale_units="xy", scale=1)
+
+plt.xlim(-1.5, 1.5)
+plt.ylim(-1.5, 1.5)
+plt.grid()
+plt.title("Eigenvectors")
+plt.show()

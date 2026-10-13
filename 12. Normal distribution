@@ -1,0 +1,15 @@
+from scipy.stats import norm
+import numpy as np
+import matplotlib.pyplot as plt
+
+mu, sd = 70, 10
+prob = norm.cdf(80, mu, sd) - norm.cdf(60, mu, sd)
+print("Probability:", prob)
+
+x = np.linspace(40, 100, 300)
+y = norm.pdf(x, mu, sd)
+
+plt.plot(x, y)
+plt.fill_between(x, y, where=(x >= 60) & (x <= 80), alpha=0.4)
+plt.title("Normal Distribution")
+plt.show()

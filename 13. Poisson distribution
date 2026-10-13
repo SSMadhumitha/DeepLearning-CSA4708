@@ -1,0 +1,13 @@
+from scipy.stats import poisson
+import matplotlib.pyplot as plt
+
+x = range(13)
+lam = 4
+
+print("P(X=6):", poisson.pmf(6, lam))
+
+plt.bar(x, poisson.pmf(list(x), lam))
+plt.xlabel("Customer Arrivals")
+plt.ylabel("Probability")
+plt.title("Poisson Distribution")
+plt.show()

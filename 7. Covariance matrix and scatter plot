@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = [22, 25, 28, 30, 32]
+h = [80, 75, 68, 60, 55]
+
+print("Covariance Matrix:\n", np.cov(t, h))
+
+plt.scatter(t, h)
+plt.xlabel("Temperature")
+plt.ylabel("Humidity")
+plt.title("Temperature vs Humidity")
+plt.show()
